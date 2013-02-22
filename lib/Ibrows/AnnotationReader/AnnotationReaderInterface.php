@@ -13,22 +13,17 @@ interface AnnotationReaderInterface
     ;
 
     /**
-     * @param Reader $annotationReader
-     * @return AnnotationReaderInterface
-     */
-    public function setAnnotationReader(Reader $annotationReader);
-
-    /**
      * @param mixed $entity
      * @return array
      */
     public function getAnnotations($entity);
 
     /**
-     * @param mixed $entity
-     * @param string $type
+     * @param string|object $class
+     * @param string $interface
      * @param string $scope
-     * @return array
+     * @param bool $first
+     * @return AnnotationBag
      */
-    public function getAnnotationsByType($entity, $type, $scope);
+    public function getAnnotationsByType($class, $interface, $scope, $first = true);
 }
